@@ -1,0 +1,2 @@
+create table tab_name_sql(id int,name varchar(15),city varchar(25))
+insert into tab_name_sql values(1,'pankaj','delhi'),(2,'suman','gurgaon)
