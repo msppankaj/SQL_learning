@@ -1,1 +1,2 @@
-
+create table wind_func_sql(name varchar(25),id int, city varchar(25),amt int)
+inset into wind_func_sql values('pankaj',102,'rachi',10000)
