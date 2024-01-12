@@ -1,2 +1,17 @@
+what is window function in sql?
+simple this kind of function assign value in each row from the value that is getting generating from table rows.
+e.g- suppose if we want to get the aggregate value from any table columns and have to assign in each row then we use window function.
+
+how many types of window function are there.
+there are three types of window functions.
+Aggregate window functions;
+Ranking window functions;
+Value window functions.
+
+what do you understand by Aggregate window functions.
+count,sum,min,max,avg is called agreegate function, that is generelly used with groupby and having clause. generelly this type of function provide insight about the table colums.
+
+
+
 create table wind_func_sql(name varchar(25),id int, city varchar(25),amt int)
 inset into wind_func_sql values('pankaj',102,'rachi',10000)
