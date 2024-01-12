@@ -11,6 +11,14 @@ Value window functions.
 what do you understand by Aggregate window functions.
 count,sum,min,max,avg is called agreegate function, that is generelly used with groupby and having clause. generelly this type of function provide insight about the table colums.
 
+what is partition by and over in sql, please explain.
+as name suggest partition by is used to divide in part and over clause is used for window function to assign the value in each row.
+
+what is ranking window function?
+this basically used to assign ranking catogary in each row according to the columm value in the table.
+
+what is Value window functions?
+this value assigning value of the column according to the row.
 
 
 create table wind_func_sql(name varchar(25),id int, city varchar(25),amt int)
