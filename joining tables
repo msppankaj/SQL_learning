@@ -7,4 +7,6 @@ create table join3(pid int,city varchar(25),subjet varchar(25))
  select * from join1
  select * from join2
  select * from join3
-
+select a.id,b.number from join1 a inner join join2 b on a.id=b.Aid--inner join
+ select a.id,b.number from join1 a left join join2 b on a.id=b.Aid--left join
+ select a.id,b.number from join1 a right join join2 b on a.id=b.Aid--right join
