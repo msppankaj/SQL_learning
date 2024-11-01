@@ -1,1 +1,10 @@
+create table join1(id int,name varchar(25),city varchar(25))
+create table join2(Aid int,fname varchar(25),number int)
+create table join3(pid int,city varchar(25),subjet varchar(25))
+ insert into join1 values(1,'pankaj','deli'),(1,'pankaj','kolkata'),(2,'kumar','deli'),(3,'amar','kolkata'),(4,'sunil','racnhi')
+ insert into join2 values(1,'errrr',101),(1,'umesh',102),(2,'imaran',106),(3,'amar',101),(4,'jatin',103),(5,'omlar',105)
+ insert into join3 values(1,'deli','hindi'),(1,'deli','eng'),(2,'kolkata','math'),(3,'kolkata','eng'),(4,'racnhi','math'),(5,'racnhi','math')
+ select * from join1
+ select * from join2
+ select * from join3
 
