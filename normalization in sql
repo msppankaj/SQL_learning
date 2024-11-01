@@ -1,3 +1,5 @@
+1NF
+
 --we have one table for 1nf.
 create table tab11(id int,fname varchar(25),contact varchar(25),subject1 varchar(25))
 insert into tab11 values(101,'pankaj','7548548','science, hindi, comp'),(111,'suman','2546511','hindi,gk')
@@ -5,5 +7,27 @@ insert into tab11 values(101,'pankaj','7548548','science, hindi, comp'),(111,'su
 --this table contain multiple values for subject1 columns and looks like below:
 --now i want to make all the value distint with id,
 select id,value from tab11 cross apply string_split(subject1,',')
+
+2NF
+
+create table tab10 (ordid int,proid int,pname varchar(25),qnt int,constraint pk_1 primary key(ordid,proid))
+insert into tab10 values(1,101,'apple',5),(1,102,'banana',4),(2,101,'orange',6),(3,101,'kiwi',9)
+select * from tab10
+
+--To meet the requirements of 2NF:
+--The table must be in 1NF.
+--All non-key attributes should be fully dependent on the entire primary key.
+-- we have ordid and proid as primary key and serve as composite key. product name is depend only on proid alone not to all primary key.
+--so we will create one more table here.
+create table tab9(proid int,proname varchar(25))
+insert into tab9
+select proid,pname from tab10
+--now we have two table ready
+select * from tab9
+select * from tab10
+--now remove column pname from tabl10
+alter table tab10
+drop column pname
+-- now we have successfully compledted 2nf table ready
 
 
