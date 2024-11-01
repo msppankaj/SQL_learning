@@ -1,1 +1,4 @@
--
+we have one table for 1nf.
+create table tab11(id int,fname varchar(25),contact varchar(25),subject1 varchar(25))
+insert into tab11 values(101,'pankaj','7548548','science, hindi, comp'),(111,'suman','2546511','hindi,gk'),(113,'umesh','87546465','math,english'),(104,'aman','857465','math,himdi,english')
+
