@@ -22,6 +22,24 @@ create table tab9(proid int,proname varchar(25))
 insert into tab9
 select proid,pname from tab10
 --now we have two table ready
+
+3NF
+--creating table to learn:
+create table tab4(stid int,stname varchar(25),course varchar(25),course_inst varchar(25))
+--inserting values:
+insert into tab4 values(1,'alice','math','mr.jon'),(2,'bob','science','mr.berlin'),(3,'alice','english','mr.jon'),(4,'charlin','math','mr.brown')
+--get data from tables
+select * from tab4
+--follow rules for 3rd NF, creating another tables
+create table tab41(stid int,course varchar(25),cou_inst varchar(25))
+--inserting values from previous table:
+insert into tab41
+select stid,course,course_inst from tab4
+select * from tab4
+select * from tab41
+--droping columns from previous tables
+alter table tab4
+drop column course,course_inst
 select * from tab9
 select * from tab10
 --now remove column pname from tabl10
@@ -29,4 +47,4 @@ alter table tab10
 drop column pname
 -- now we have successfully compledted 2nf table ready
 
-3NF
+
