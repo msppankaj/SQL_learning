@@ -7,3 +7,18 @@ alter column city varchar(25) not null
 
 alter table conts--removing not null constraints
 alter column id int
+
+unique:
+create table conts(id int unique, name varchar(25),roll int not null unique,city varchar(25))--create table with unique key
+--or
+create table conts1(id int, name varchar(25),roll int not null,city varchar(25),constraint uk_1 unique(id,roll))--alternate option
+
+alter table conts--add constraint in single columun
+add unique(name)
+
+alter table conts--add constraint in multiple columun
+add constraint uk unique(id,roll,city)
+
+alter table conts--drop constraint 
+drop constraint uk
+
