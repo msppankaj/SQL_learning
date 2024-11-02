@@ -72,6 +72,41 @@ alter table pk
 drop constraint [PK__pk__3213E83FCC1A300B]-- drop pk in table
 
 
+Foreign key:
+use pankaj
+--creating pk and fk with single column
+create table pk(id int primary key,name varchar(25))
+insert into pk values(1,'pankaj'),(2,'aman'),(3,'suman'),(4,'raja'),(5,'deep')
+
+create table fk(id int foreign key references pk(id),subject varchar(25))
+insert into fk values(2,'sience'),(2,'hindi'),(3,'sience'),(1,'hindi'),(4,'gk')
+
+select * from pk
+select * from fk
+--creating pk and fk with multiple columns
+create table persons(PersonID int not null,orderid int not null,constraint pk_11 primary key(PersonID,orderid))
+CREATE TABLE Orders (
+    OrderID int NOT NULL,
+    OrderNumber int NOT NULL,
+    PersonID int,
+    PRIMARY KEY (OrderID),
+    CONSTRAINT FK_PersonOrder FOREIGN KEY (PersonID,orderid)
+    REFERENCES Persons(PersonID,orderid))
+--adding fk with single column
+ALTER TABLE Orders
+ADD FOREIGN KEY (PersonID) REFERENCES Persons(PersonID)
+--adding fk with multiple columns
+ALTER TABLE Orders
+ADD CONSTRAINT FK_PersonOrder
+FOREIGN KEY (PersonID,orderid) REFERENCES Persons(PersonID,orderid)
+
+ALTER TABLE Orders
+DROP CONSTRAINT FK_PersonOrder--droping fk
+
+
+
+
+
 
 
 
