@@ -50,6 +50,27 @@ add constraint df_1 default getdate() for dob
 alter table def1
 alter column id drop default
 
+PRIMARY KEY:
+--the most important contstraint is primary key and foreign key lets look at:
+--primary key, a table contain only on PK but can be single or multiple column.
+--it assure not null and unique value in records.
+create table pk(id int primary key,name varchar(25),roll int)--pk table with single column creation
+create table pk1(id int,roll int,name varchar(25),constraint PK_2 primary key(id,name,roll))--pk table with multiple column creation
+select * from pk
+insert into pk values(3,'pankaj',15),(2,'pankaj',13)
+
+alter table pk
+alter column roll int not null
+
+alter table pk
+add primary key(roll)--if pk not available in table else get error
+
+alter table pk
+add constraint pk_per primary key(id,roll)--add primary key existing table with multiple column
+
+alter table pk
+drop constraint [PK__pk__3213E83FCC1A300B]-- drop pk in table
+
 
 
 
