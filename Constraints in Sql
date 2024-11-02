@@ -22,3 +22,17 @@ add constraint uk unique(id,roll,city)
 alter table conts--drop constraint 
 drop constraint uk
 
+check:
+use pankaj
+create table conts(id int unique, name varchar(25),roll int unique,age int check(age>18))
+create table conts1(id int,name varchar(25),roll int,age int,constraint ck_1 check(age>18 and id>101))
+create table conts2(id int check(id>10),age int check(age>18))
+
+alter table conts
+add check(name='pankaj')
+
+alter table conts1
+add constraint chk_1 check(id>52 and age>50)
+
+alter table const1
+drop constraint chk_1
