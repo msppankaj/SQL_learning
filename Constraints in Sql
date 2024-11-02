@@ -24,9 +24,9 @@ drop constraint uk
 
 check:
 use pankaj
-create table conts(id int unique, name varchar(25),roll int unique,age int check(age>18))
-create table conts1(id int,name varchar(25),roll int,age int,constraint ck_1 check(age>18 and id>101))
-create table conts2(id int check(id>10),age int check(age>18))
+create table conts(id int unique, name varchar(25),roll int unique,age int check(age>18))--create table with single
+create table conts1(id int,name varchar(25),roll int,age int,constraint ck_1 check(age>18 and id>101))--alternate way/multiple col
+create table conts2(id int check(id>10),age int check(age>18))--alt way /multiple col
 
 alter table conts
 add check(name='pankaj')
@@ -36,3 +36,25 @@ add constraint chk_1 check(id>52 and age>50)
 
 alter table const1
 drop constraint chk_1
+
+DEFAULT:
+The DEFAULT constraint is used to set a default value for a column.
+The default value will be added to all new records, if no other value is specified:
+use pankaj
+
+create table def1(id int default 111,name varchar(25) default 'pankaj',city varchar(25),dob date)
+
+alter table def1
+add constraint df_1 default getdate() for dob
+
+alter table def1
+alter column id drop default
+
+
+
+
+
+
+
+
+
