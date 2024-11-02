@@ -1,1 +1,9 @@
+not null:
+use pankaj--creating table with not null
+create table conts(id int not null, name varchar(25),roll int not null,city varchar(25))
 
+alter table conts--adding not null
+alter column city varchar(25) not null
+
+alter table conts--removing not null constraints
+alter column id int
