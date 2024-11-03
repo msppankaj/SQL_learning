@@ -10,3 +10,24 @@ create table join3(pid int,city varchar(25),subjet varchar(25))
 select a.id,b.number from join1 a inner join join2 b on a.id=b.Aid--inner join
  select a.id,b.number from join1 a left join join2 b on a.id=b.Aid--left join
  select a.id,b.number from join1 a right join join2 b on a.id=b.Aid--right join
+
+--output as the all unique record between or among the tables
+select id,name from join1
+union
+select aid,fname from join2
+
+--output as the common record between or among the tables
+select id,name from join1
+intersect
+select aid,fname from join2
+
+--output as the not common or non-matching record between or among the tables
+select id,name from join1
+except
+select aid,fname from join2
+
+--output as the all record between or among the tables
+select id,name from join1
+union all
+select aid,fname from join2
+
