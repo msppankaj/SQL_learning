@@ -23,3 +23,40 @@ this value assigning value of the column according to the row.
 
 create table wind_func_sql(name varchar(25),id int, city varchar(25),amt int)
 inset into wind_func_sql values('pankaj',102,'rachi',10000)
+
+--ranking winddow function:
+ROW_NUMBER()
+RANK()
+DENSE_RANK()
+NTILE()
+PERCENT_RANK()
+select * from wind_func
+select *,rank() over (order by city) as rrr from wind_func
+select *,dense_rank() over (order by city) as rrr from wind_func
+select *,row_number() over (order by particular) as rrr from wind_func
+select *,ntile(3) over (order by p_id) as rrr from wind_func
+
+select * from wind_func
+select *,rank() over (partition by p_id order by city) as rrr from wind_func
+select *,dense_rank() over ( partition by p_id order by city) as rrr from wind_func
+select *,row_number() over (partition by p_id order by particular) as rrr from wind_func
+select *,ntile(3) over (partition by p_id order by p_id) as rrr from wind_func
+
+--SQL Server used this function to get the first, last, previous, and next values in a table. It mainly contains these functions: LAG(), LEAD(), FIRST_VALUE(), and LAST_VALUE().
+--value wind_function:
+select *,lead(city,1) over (partition by p_id order by city) from wind_func
+select *,lead(city,1) over (order by city) from wind_func
+
+select *,lag(city,2) over (partition by p_id order by city) from wind_func
+select *,lag(city,2) over (order by city) from wind_func
+
+select *,first_value(city) over (partition by p_id order by city) from wind_func
+select *,first_value(city) over (order by city) from wind_func
+
+select *,last_value(s_amount) over (partition by p_id order by city) from wind_func
+select *,last_value(city) over (order by city) from wind_func
+
+
+
+
+
