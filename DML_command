@@ -1,1 +1,18 @@
+select * from wind_func order by id
 
+--DML, insert, update and delete called DML.
+
+--insert
+
+insert into wind_func values(11,'sukant',1,'noida','sugar',500)
+insert into  wind_func(id,city) values (12,'noida')
+
+delete from wind_func--delete all record from table as truncate also use truncate table tble_name
+delete from wind_func where id=6
+truncate table wind_func--structure of the table remainning and rest deleted
+
+update wind_func
+set name='pankaj' where id is null
+
+update wind_func
+set name='suman' where particular is null and s_amount is null
