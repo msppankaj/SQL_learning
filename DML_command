@@ -16,3 +16,14 @@ set name='pankaj' where id is null
 
 update wind_func
 set name='suman' where particular is null and s_amount is null
+
+--select into//insert into 
+select * from wind_func
+select * from join3
+
+select pid,city into new_t from join3
+select * into new_t1 from join3
+
+insert into join3 
+select id,city,particular from wind_func
+
