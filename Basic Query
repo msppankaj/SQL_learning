@@ -35,3 +35,28 @@ select sum(id) from wind_func
 select sum(id) from wind_func where city='ranchi'
 select avg(id) from wind_func where city='ranchi'
 select count(id) from wind_func
+
+--Like and wildcard
+use pankaj
+select * from wind_func
+select * from wind_func where name like'%p%'--contain p anywhere
+select * from wind_func where name like'p%'--start with p
+select * from wind_func where name like'%p'--end with p
+select * from wind_func where name like'd_l_p'--where 2,4 letter unknown
+select * from wind_func where name like'p___'--start with p and contain 4 digit
+select * from wind_func where name like'____i'--5 digit and end with i
+--with and or
+SELECT * FROM wind_func
+WHERE Name LIKE 'a%' OR city LIKE 'b%'
+SELECT * FROM wind_func
+WHERE Name LIKE 'a%' and city LIKE 'b%'
+--[] means Represents any single character within the brackets *
+--%	Represents zero or more characters
+--_	Represents a single character
+--^ Represents any character not in the brackets *
+---Represents any single character within the specified range *
+--{} Represents any escaped character **
+
+SELECT * FROM wind_func WHERE Name LIKE '[bsp]%'
+SELECT * FROM wind_func WHERE Name LIKE '[a-f]%'
+SELECT * FROM wind_func WHERE Name LIKE '_r%'--r in second position
