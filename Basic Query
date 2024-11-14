@@ -1,1 +1,37 @@
-
+--get all records and attrubute from table
+select * from wind_func
+--filter single attribute
+select id from wind_func where name='pankaj'
+--multiple columns
+select id,name from wind_func where city='ranchi' and s_amount=100
+--filter with or
+select particular from wind_func where id=4 or id=2
+--select unique value in column
+select distinct P_id from wind_func
+--select unique value in multiple column
+select distinct id,name from wind_func
+select distinct city,particular from wind_func
+--selecting null values
+select * from wind_func where id is null
+select * from wind_func where id is not null
+--order by
+select * from wind_func order by id
+select * from wind_func order by id,particular
+select name from wind_func order by id,particular
+--In
+select * from wind_func where id in (4,1,5)
+--not in
+select * from wind_func where id not in (4,1,5) and particular in ('salt','comp')
+--select top
+select top 2 id from wind_func
+select top 3 * from wind_func
+select top 5 * from wind_func order by id
+select top 5 * from wind_func where id=2 order by id 
+select top 5 percent * from wind_func where id=2 order by id 
+--agregate function:(max,min,avg,count,sum etc)
+select max(id) from wind_func
+select max(id) from wind_func where city='ranchi'
+select sum(id) from wind_func
+select sum(id) from wind_func where city='ranchi'
+select avg(id) from wind_func where city='ranchi'
+select count(id) from wind_func
