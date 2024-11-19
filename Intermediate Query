@@ -7,3 +7,4 @@ when s_amount<50 then 'miedian'
 when s_amount<0 then 'low' 
 else 'fine'
 end as avf from wind_func
+select coalesce([user category],[client Name],[Full Address]) as ddd from service$
