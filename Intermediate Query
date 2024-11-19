@@ -1,2 +1,9 @@
 --write query for number of booking each month for every client
 select [client name],count([Bookno])[Total_bookings],DATENAME(MONTH,[pickup date]) as [Month_name] from service$ where [Client Name] in ('National High Speed Rail Corp','BASF India Ltd.','Abbott India Limited','Adama India Private Limited','Agilent Technologies India Pvt') group by [Client Name],DATENAME(MONTH,[pickup date]) order by [Client Name]
+--case when statement to use:
+select name,city,case when
+s_amount>100 then 'high'
+when s_amount<50 then 'miedian'
+when s_amount<0 then 'low' 
+else 'fine'
+end as avf from wind_func
