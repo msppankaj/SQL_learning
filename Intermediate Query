@@ -7,4 +7,9 @@ when s_amount<50 then 'miedian'
 when s_amount<0 then 'low' 
 else 'fine'
 end as avf from wind_func
+--null function as coalesce(return first null values) and isnull(return with condition/default values if found null)
 select coalesce([user category],[client Name],[Full Address]) as ddd from service$
+select coalesce(id,salary,email) from emp_record
+select isnull(id,14) from emp_record
+
+--exists and non exists
