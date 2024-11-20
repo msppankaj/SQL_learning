@@ -13,3 +13,8 @@ select coalesce(id,salary,email) from emp_record
 select isnull(id,14) from emp_record
 
 --exists and non exists
+select * from wind_func
+select * from Employees
+select count(*) from wind_func where not exists(select employeeID from Employees where firstname='kon' or ManagerID>2)
+select  id from wind_func where name =any(select name from wind_func where city='ranchi')
+select  id from wind_func where name =all(select name from wind_func where city='ranchi')
