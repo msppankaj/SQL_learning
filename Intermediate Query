@@ -18,3 +18,40 @@ select * from Employees
 select count(*) from wind_func where not exists(select employeeID from Employees where firstname='kon' or ManagerID>2)
 select  id from wind_func where name =any(select name from wind_func where city='ranchi')
 select  id from wind_func where name =all(select name from wind_func where city='ranchi')
+
+https://www.simplilearn.com/tutorials/sql-tutorial/stored-procedure-in-sql
+--store procedure sql
+select * from wind_func
+create proc ran_g as 
+begin
+select id from wind_func where particular='salt'
+end
+exec ran_g
+--SP with parameter
+
+create procedure with_p(@parti varchar(25)) as 
+begin
+select * from wind_func where particular=@parti
+end
+execute with_p salt
+
+--create proc with 2 parametr
+
+create procedure pank2(@id int,@city varchar(25)) as
+begin
+select * from wind_func where id=@id and city=@city
+end
+
+execute pank2 4,ranchi
+
+--create proc with default parameter
+create proc def_2(@city varchar='ranchi') as 
+begin
+select * from wind_func where city=@city
+end
+exec def_2 tata
+
+
+
+
+
