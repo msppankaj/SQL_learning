@@ -51,7 +51,21 @@ select * from wind_func where city=@city
 end
 exec def_2 tata
 
+select * from wind_func
+--way to extract duplicate values
+--single column
+select city,count(city) from wind_func group by city having COUNT(city)>1
+--multiple column
+select p_id,city,count(*) from wind_func group by p_id,city having COUNT(*)>1
 
+--other way 2nd-
+select * from wind_func
+ with cte as (select *,rank() over(order by city) as aa from wind_func)
+ select * from cte where aa >1
+
+ --other way 2nd-multiple
+ with cte as (select city,particular,row_number() over(partition by city,particular order by city,particular) as aa from wind_func)
+ select * from cte where aa >1
 
 
 
