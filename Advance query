@@ -1,1 +1,11 @@
-
+phone	item
+1	shirt
+2	jeans
+3	shirt
+1	jeans
+2	jeans
+1	shirt
+--select only purchase jeans
+select * from table where item='jeans'
+except
+select * from table where item='shirt'
