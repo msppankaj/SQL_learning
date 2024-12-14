@@ -67,5 +67,11 @@ select * from wind_func
  with cte as (select city,particular,row_number() over(partition by city,particular order by city,particular) as aa from wind_func)
  select * from cte where aa >1
 
+highest salary..
+select * from sal1
+--select 6th highest/lowest salary in table
+select top 1 salary,name from (select top 6 salary,name from sal1 order by salary desc) as hh order by salary-- one way
+with cte as (select *,dense_rank() over (order by salary desc) as ddd from sal1) select * from cte where ddd=6--another way
+
 
 
