@@ -1,1 +1,6 @@
-
+Q1. retrive the 2nd highest salary/nth salary from table?
+q2.calculate the cummulative percentage of total sales for each product.
+q3.find all orders where at least one product price is >100.
+q4.calculate a rooling 3 month sales total for each product.
+q5.find customer who made more than on purchase on the same day
+q6.for each order
