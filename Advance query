@@ -9,3 +9,22 @@ phone	item
 select * from table where item='jeans'
 except
 select * from table where item='shirt'
+
+select * from service$
+--duplicate values
+
+select [Asset Number],[Repeat Type] from service$ group by [Asset Number],[Repeat Type] having count(*)>1 order by [Asset Number]
+
+
+with cte as 
+(select [Asset Number],Row_number() over (partition by [Asset Number] order by [Asset Number] ) aa from service$)
+select * from cte where aa>1
+--delete from cte where aa>1
+
+--highest salary
+select max(distinct[Estimated Amount]) from service$  where [Estimated Amount]<(select max([Estimated Amount]) from service$)
+with ct1 as 
+(select [Estimated Amount],DENSE_RANK() over (order by [Estimated Amount] desc) ass from service$)
+select * from ct1 where ass=2
+
+
