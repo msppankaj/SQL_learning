@@ -1,1 +1,4 @@
+relationship is a establishing assoaciation betweeen two or more table in sql dbms.it is based on common field between more than one tables and involve primary key and foreign key.
+there are five types of relationship in dbms names, one to one,one to many, many to one, many to one and self referencing.
+one to one- here first table has pk that is uique and not null. and second columns is related to first column and has one record ony.
 
