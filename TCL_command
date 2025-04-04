@@ -14,3 +14,24 @@ begin tran
 update join3
 set subjet='eng'where pid=2 and city='kolkata'
 rollback tran
+
+ACID Property in sql.
+Atomicity: this property explain that all transactio should complete fully or nothing.e.g, in one trasacion doing 2 query, update and insert, it means both update and insert done sucessfuly 
+else cancel both. not insret done or update fail and vice versa.
+consistancy:. Consistency guarantees that changes made within a transaction are populated across the database system (e.g., nodes) and in alignment with DBMS constraints. 
+If data consistency is going to be negatively impacted by a transaction in an inconsistent state, the entire transaction will fail. eg A has 100 and B has 200 doing trans as a pass 50 to B then
+the total before tran is 300 and after tran 300 then trasn is sucess.
+isolation:Isolation guarantees that each transaction appears to execute independently, even when multiple transactions are running concurrently. 
+This means that changes made by one transaction are not visible to other transactions until the first transaction is committed
+durability:Durability ensures that once a transaction is successfully completed (committed), the changes made by that transaction are permanently recorded and will not be lost, 
+even if the system crashes or experiences a power outage
+
+
+
+
+
+
+
+
+
+
