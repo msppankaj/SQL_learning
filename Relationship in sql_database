@@ -23,4 +23,20 @@ select * from relation1
 
 many to one: is also same kind of one to many types and but the difference is only one where one table consider as 2nd and 2nd consider as 1st.
 
+many to many: 
+
+here theer is concept where column of one table has many values and that reference to other table columns has also same vice versa.
+create table relation(name varchar(25),id int primary key)
+create table relation1(empid int ,city varchar(22) primary key)
+create table fk1(reid int foreign key references relation(id),addr varchar(22) foreign key references relation1(city))
+insert into relation values ('pankaj',1),('pankaj',2),('pankaj',3)
+insert into relation1 values (1,'nnd'),(2,'del'),(3,'ggn')
+select * from relation
+select * from relation1
+insert into fk1 values (1,'nnd'),(3,'del'),(3,'ggn'),(1,'nnd'),(2,'del'),(3,'ggn')
+
+
+
+
+
 
