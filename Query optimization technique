@@ -1,1 +1,19 @@
+it is defined as the use of sql query in best posisble way to enahnce the performace of query and to get the result quicky and best possible way i,e instantly.
+there is some method and way to enhance the performance of query result. we are discussing one-one.
+1-indexing-- index is a method
+there are two type of index, clustered and non clusdted index.clustered physically sort data while non clusterd create separate page to index.
+sytax:
+select price,country,price from ['winemag-data_first150k$'] order by Serial_num offset 100 rows fetch next 20 rows only
+select * from ['winemag-data_first150k$'] order by country
+create clustered index xxx on ['winemag-data_first150k$'](Serial_num)
 
+select * from sys.indexes where name=nnn
+select * from sys.objects
+
+create index nnn on ['winemag-data_first150k$'](points,price,country)-- non clustered index
+select country,points from ['winemag-data_first150k$']
+
+select object_name(object_id) as tablename, * 
+from sys.indexes where type_desc = 'NONCLUSTERED' and name='nnn'
+
+drop index xxx on ['winemag-data_first150k$']
