@@ -17,3 +17,21 @@ select object_name(object_id) as tablename, *
 from sys.indexes where type_desc = 'NONCLUSTERED' and name='nnn'
 
 drop index xxx on ['winemag-data_first150k$']
+2- select:
+
+do not user select * from ccc, try to find selected columns and rows that is needed.
+select * from ccc-- dnt user
+select cc, yy, from xx where cc='uuu'--user like this.
+
+3-select country from ['winemag-data_first150k$'] where exists (select price from ['winemag-data_first150k$'] where price=5)
+use exists to find, if available the get record else not
+4- use join insted of subquery
+5- use of wildcard wisely.
+dnt use like '%ddd%
+use 'dddf%'
+
+
+
+
+
+
